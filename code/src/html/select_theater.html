@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theater</title>
+    <link rel="icon" href="../../images/sitefooterlogo.png" type="image/png">
+    <link rel="stylesheet" href="../css/select_theater.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <link rel="stylesheet" href="../component/navbar.css" />
+    <div id="navbar-placeholder"></div>
+        <main class="main-content">
+        <section class="movie-details">
+            <div class="container">
+                <div class="movie-info-wrapper">
+                    <div class="movie-poster">
+                        <img src="../../images/superman_xlg.jpg" alt="Superman Movie Poster">
+                        <div class="poster-overlay">
+                            <div class="rating-badge">
+                                <span class="star">★</span>
+                                <span class="rating-number">4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="movie-details-content">
+                        <div class="movie-header">
+                            <h1 class="movie-title">Superman</h1>
+                            <div class="movie-badges">
+                                <span class="badge duration">2h 15m</span>
+                                <span class="badge rated">R-13+</span>
+                                <span class="badge format">2D</span>
+                                <span class="badge imax">IMAX</span>
+                            </div>
+                        </div>
+                        
+                        <div class="movie-genres">
+                            <span class="genre action">Action</span>
+                            <span class="genre sci-fi">Sci-fi</span>
+                            <span class="genre thriller">Thriller</span>
+                            <span class="genre comedy">Comedy</span>
+                        </div>
+                        
+                        <div class="movie-meta">
+                            <div class="meta-row">
+                                <span class="meta-label">Release Date:</span>
+                                <span class="meta-value">July 11, 2025</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Director:</span>
+                                <span class="meta-value">James Gunn</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Writer:</span>
+                                <span class="meta-value">Matt Damson</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Part Of:</span>
+                                <span class="meta-value">DC Universe (DCU)</span>
+                            </div>
+                        </div>
+                        
+                        <a href="https://youtu.be/hUUszE29jS0?si=YmK2efKHsuGk5RA3" target="_blank" rel="noopener noreferrer" class="watch-trailer-btn">
+                            <span class="play-icon">▶</span>
+                            Watch Trailer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider">
+            <div class="container">
+                <div class="divider-line"></div>
+            </div>
+        </div>
+        
+        <section class="select-theater">
+            <div class="container">
+                <h2 class="section-title">Select Theater</h2>
+                
+                <div class="theater-search">
+                    <div class="search-container">
+                        <input type="text" id="theaterSearch" placeholder="Search theaters..." onkeyup="searchTheaters()">
+                        <button class="search-btn" aria-label="Search Theaters">
+                            <span class="search-icon">🔍</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="theaters-list" id="theatersList">
+                    <div class="theater-item" data-theater="aeonewa mall">
+                        <div class="theater-header" onclick="toggleTheater(this)">
+                            <h3 class="theater-name">AEONEWA MALL</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="theater-content">
+                            <div class="screening-type">
+                                <h4 class="type-title">Regular 2D</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">11:00</button>
+                                    <button class="time-slot">13:00</button>
+                                    <button class="time-slot">14:35</button>
+                                    <button class="time-slot">15:00</button>
+                                    <button class="time-slot">17:00</button>
+                                    <button class="time-slot">18:30</button>
+                                    <button class="time-slot">20:00</button>
+                                    <button class="time-slot">21:00</button>
+                                </div>
+                            </div>
+                            <div class="screening-type">
+                                <h4 class="type-title">IMAX</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">14:00</button>
+                                    <button class="time-slot">16:30</button>
+                                    <button class="time-slot">18:30</button>
+                                </div>
+                            </div>
+                            <div class="screening-type">
+                                <h4 class="type-title">Premiere</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">13:30</button>
+                                    <button class="time-slot">15:30</button>
+                                    <button class="time-slot">18:30</button>
+                                    <button class="time-slot">20:00</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theater-item" data-theater="bandowo mall">
+                        <div class="theater-header" onclick="toggleTheater(this)">
+                            <h3 class="theater-name">BANDOWO MALL</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="theater-content">
+                            <div class="screening-type">
+                                <h4 class="type-title">Regular 2D</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">10:30</button>
+                                    <button class="time-slot">12:45</button>
+                                    <button class="time-slot">15:15</button>
+                                    <button class="time-slot">17:45</button>
+                                    <button class="time-slot">20:15</button>
+                                </div>
+                            </div>
+                            <div class="screening-type">
+                                <h4 class="type-title">IMAX</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">13:00</button>
+                                    <button class="time-slot">16:00</button>
+                                    <button class="time-slot">19:00</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theater-item" data-theater="central park">
+                        <div class="theater-header" onclick="toggleTheater(this)">
+                            <h3 class="theater-name">CENTRAL PARK</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="theater-content">
+                            <div class="screening-type">
+                                <h4 class="type-title">Regular 2D</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">11:15</button>
+                                    <button class="time-slot">13:30</button>
+                                    <button class="time-slot">16:00</button>
+                                    <button class="time-slot">18:30</button>
+                                    <button class="time-slot">21:00</button>
+                                </div>
+                            </div>
+                            <div class="screening-type">
+                                <h4 class="type-title">Premiere</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">14:00</button>
+                                    <button class="time-slot">17:00</button>
+                                    <button class="time-slot">20:00</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theater-item" data-theater="desnanto mall">
+                        <div class="theater-header" onclick="toggleTheater(this)">
+                            <h3 class="theater-name">DESNANTO MALL</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="theater-content">
+                            <div class="screening-type">
+                                <h4 class="type-title">Regular 2D</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">12:00</button>
+                                    <button class="time-slot">14:30</button>
+                                    <button class="time-slot">17:00</button>
+                                    <button class="time-slot">19:30</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theater-item" data-theater="eruditiosi mall">
+                        <div class="theater-header" onclick="toggleTheater(this)">
+                            <h3 class="theater-name">ERUDITIOSI MALL</h3>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="theater-content">
+                            <div class="screening-type">
+                                <h4 class="type-title">Regular 2D</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">11:45</button>
+                                    <button class="time-slot">14:15</button>
+                                    <button class="time-slot">16:45</button>
+                                    <button class="time-slot">19:15</button>
+                                    <button class="time-slot">21:45</button>
+                                </div>
+                            </div>
+                            <div class="screening-type">
+                                <h4 class="type-title">IMAX</h4>
+                                <div class="time-slots">
+                                    <button class="time-slot">15:00</button>
+                                    <button class="time-slot">18:00</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <link rel="stylesheet" href="../component/footer.css" />
+    <div id="footer-placeholder"></div>
+    <script src="../js/select_theater.js"></script>
+</body>
+</html>

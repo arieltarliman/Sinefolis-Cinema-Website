@@ -1,0 +1,764 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #EAE0D5; 
+    color: #0A0908; 
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    padding-top: 0; 
+}
+
+
+.hero-carousel {
+    position: relative;
+    height: 100vh; 
+    min-height: 600px; 
+    overflow: hidden;
+    
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.carousel-slide::before { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 9, 8, 0.6); 
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    position: relative; 
+    z-index: 2;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    height: auto; 
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 40px; 
+    text-align: center; 
+}
+
+
+
+.slide-info {
+    
+    color: #EAE0D5;
+    max-width: 650px; 
+}
+
+.movie-title {
+    font-size: clamp(2.5rem, 6vw, 4rem); 
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #EAE0D5;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.movie-description {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 25px;
+    opacity: 0.9;
+    line-height: 1.7;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.movie-meta span {
+    background: rgba(234, 224, 213, 0.15); 
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(234, 224, 213, 0.2);
+}
+
+.rating {
+    color: #FFD700 !important;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; 
+}
+
+.cta-button { 
+    display: inline-block; 
+    text-decoration: none; 
+    background: linear-gradient(45deg, #C6AC8E, #A08A6E); 
+    color: #0A0908; 
+    border: none;
+    padding: 14px 30px; 
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.cta-button.ticket-btn { 
+    background: linear-gradient(45deg, #b39870, #8a765c);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.03); 
+    box-shadow: 0 10px 25px rgba(198, 172, 142, 0.4);
+    filter: brightness(1.1);
+}
+
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(234, 224, 213, 0.8); 
+    color: #0A0908;
+    border: none;
+    width: 45px; 
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.carousel-btn:hover {
+    background: #C6AC8E;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn { left: 20px; } 
+.next-btn { right: 20px; }
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; 
+    z-index: 10;
+}
+
+.dot {
+    width: 10px; 
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(234, 224, 213, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(234, 224, 213, 0.6);
+}
+
+.dot.active,
+.dot:hover {
+    background: #C6AC8E;
+    transform: scale(1.2);
+    border-color: #C6AC8E;
+}
+
+
+.top-films {
+    padding: 60px 0; 
+    background: #EAE0D5;
+}
+
+.section-title {
+    font-size: 2.2rem; 
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px; 
+    color: #22333B;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px; 
+    height: 3px; 
+    background: linear-gradient(45deg, #C6AC8E, #5E503F);
+    border-radius: 2px;
+}
+
+.top-films-carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.films-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 30s linear infinite; 
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+.films-track:hover {
+    animation-play-state: paused;
+}
+
+.film-card-small {
+    position: relative; 
+    flex: 0 0 180px; 
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden; 
+    border-radius: 15px; 
+}
+
+.film-card-small:hover {
+    transform: translateY(-8px); 
+}
+
+.film-card-small img {
+    width: 100%;
+    height: 260px; 
+    object-fit: cover;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(34, 51, 59, 0.15);
+    transition: all 0.3s ease;
+}
+
+.film-card-small:hover img {
+    box-shadow: 0 12px 30px rgba(34, 51, 59, 0.25);
+    transform: scale(1.03); 
+}
+
+.film-card-small h4 { 
+    margin-top: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #22333B;
+    padding: 0 5px; 
+    line-height: 1.3;
+    transition: opacity 0.3s ease; 
+}
+
+.film-card-small:hover h4 {
+    opacity: 0; 
+}
+
+.film-overlay-small {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 9, 8, 0.8); 
+    color: #EAE0D5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s ease;
+    padding: 15px;
+    border-radius: 15px; 
+    text-align: center;
+}
+
+.film-card-small:hover .film-overlay-small {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.film-overlay-small .overlay-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.film-overlay-small .film-actions-small {
+    display: flex;
+    flex-direction: column; 
+    gap: 8px;
+    width: 100%; 
+}
+
+.film-overlay-small .button-small {
+    display: block; 
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 90%; 
+    margin: 0 auto; 
+}
+
+.film-overlay-small .trailer-btn-small {
+    background: transparent;
+    border: 1px solid #C6AC8E;
+    color: #EAE0D5;
+}
+.film-overlay-small .trailer-btn-small:hover {
+    background: #C6AC8E;
+    color: #22333B;
+}
+.film-overlay-small .ticket-btn-small {
+    background: #C6AC8E;
+    color: #22333B;
+}
+.film-overlay-small .ticket-btn-small:hover {
+    background: #5E503F;
+    color: #EAE0D5;
+}
+
+
+
+.all-films {
+    padding: 60px 0;
+    background: #22333B; 
+}
+
+.all-films .section-title {
+    color: #EAE0D5; 
+}
+.all-films .section-title::after{
+    background: linear-gradient(45deg, #C6AC8E, #EAE0D5); 
+}
+
+
+.films-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.film-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-btn {
+    background: transparent;
+    color: #C6AC8E;
+    border: 2px solid #C6AC8E;
+    padding: 10px 20px; 
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem; 
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #C6AC8E;
+    color: #22333B;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    background: #EAE0D5;
+    border: 1px solid #5E503F; 
+    padding: 10px 40px 10px 15px; 
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: #0A0908;
+    width: 220px; 
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.search-box input::placeholder {
+    color: #5E503F;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5E503F;
+}
+
+#locationFilter {
+    background: #EAE0D5;
+    border: 1px solid #5E503F; 
+    padding: 10px 15px; 
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: #0A0908;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); 
+    gap: 25px; 
+    margin-top: 40px;
+}
+
+.film-card {
+    position: relative;
+    border-radius: 15px; 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #EAE0D5; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.film-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.film-poster {
+    position: relative;
+    overflow: hidden;
+}
+
+.film-poster img {
+    width: 100%;
+    height: 330px; 
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.film-card:hover .film-poster img {
+    transform: scale(1.08); 
+}
+
+.film-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(10, 9, 8, 0.95) 0%, rgba(10,9,8,0.6) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px; 
+}
+
+.film-card:hover .film-overlay {
+    opacity: 1;
+}
+
+.film-details {
+    color: #EAE0D5;
+    width: 100%;
+}
+
+.film-details h3 {
+    font-size: 1.2rem; 
+    font-weight: 600;
+    margin-bottom: 8px; 
+}
+
+.film-rating {
+    color: #FFD700;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.film-duration {
+    font-size: 0.85rem; 
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.film-genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 12px; 
+}
+
+.genre {
+    background: rgba(198, 172, 142, 0.25); 
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem; 
+    font-weight: 400;
+    border: 1px solid rgba(198, 172, 142, 0.4);
+}
+
+.film-actions {
+    display: flex;
+    gap: 8px; 
+    flex-wrap: wrap; 
+}
+
+.film-actions .trailer-btn, 
+.film-actions .ticket-btn {
+    padding: 8px 14px; 
+    border-radius: 20px;
+    font-size: 0.85rem; 
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    flex-grow: 1; 
+    text-align: center;
+}
+
+.film-actions .trailer-btn {
+    background: transparent;
+    color: #EAE0D5;
+    border: 1px solid #C6AC8E;
+}
+
+.film-actions .trailer-btn:hover {
+    background: #C6AC8E;
+    color: #22333B;
+}
+
+.film-actions .ticket-btn {
+    background: #C6AC8E;
+    color: #22333B;
+}
+
+.film-actions .ticket-btn:hover {
+    background: #5E503F;
+    color: #EAE0D5;
+}
+
+
+
+@keyframes titleEnterAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardEnterAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+.section-title { animation: titleEnterAnimation 0.7s ease-out both; }
+.film-card-small { animation: cardEnterAnimation 0.6s ease-out both; }
+.film-card { animation: cardEnterAnimation 0.6s ease-out both; }
+
+
+.section-title,
+.film-card-small,
+.film-card {
+  opacity: 0; 
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-title,
+  .film-card-small,
+  .film-card {
+    animation-play-state: paused;
+  }
+
+  .section-title.animate,
+  .film-card-small.animate,
+  .film-card.animate {
+    animation-play-state: running;
+  }
+} @media (max-width: 768px) {
+    .hero-carousel {
+        height: auto; 
+        min-height: 80vh; 
+        padding-top: 0; 
+    }
+    .slide-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px; 
+        gap: 20px;
+    }
+    
+    .slide-info {
+        
+        max-width: 90%; 
+    }
+    .movie-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+    .movie-description {
+        font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+        margin-bottom: 20px;
+    }
+    .movie-meta {
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+    .movie-meta span {
+        padding: 7px 14px;
+        font-size: 0.85rem;
+    }
+    .hero-buttons {
+        gap: 10px;
+    }
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+
+    .carousel-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    .prev-btn { left: 15px; }
+    .next-btn { right: 15px; }
+    .carousel-dots { bottom: 15px; gap: 8px; }
+    .carousel-dots .dot { width: 9px; height: 9px; }
+
+    .section-title { font-size: 2rem; margin-bottom: 35px; }
+    .section-title::after { width: 60px; }
+
+    .film-card-small { flex: 0 0 160px; } 
+    .film-card-small img { height: 230px; }
+    .film-card-small h4 { font-size: 0.9rem; }
+    .film-overlay-small .overlay-title { font-size: 1rem; margin-bottom: 8px;}
+    .film-overlay-small .button-small { font-size: 0.75rem; padding: 7px 10px; }
+
+
+    .films-controls { flex-direction: column; align-items: stretch; gap: 20px; }
+    .film-tabs { justify-content: center; } 
+    .filters { flex-direction: column; align-items: stretch; gap: 15px; }
+    .search-box input, #locationFilter { width: 100%; font-size: 0.95rem; }
+
+    .films-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+    .film-poster img { height: 300px; }
+    .film-details h3 { font-size: 1.1rem; }
+    .film-rating, .film-duration { font-size: 0.8rem; }
+    .film-genres span { font-size: 0.7rem; }
+    .film-actions .trailer-btn, .film-actions .ticket-btn { font-size: 0.8rem; padding: 7px 12px; }
+}
+
+@media (max-width: 480px) {
+    .hero-carousel { min-height: 75vh; } 
+    .slide-content { padding: 20px 15px; gap: 15px; }
+    .movie-title { font-size: clamp(1.6rem, 5vw, 2.2rem); margin-bottom: 10px; }
+    .movie-description { font-size: clamp(0.8rem, 2.5vw, 0.95rem); margin-bottom: 15px; line-height: 1.5; }
+    .movie-meta { gap: 8px; margin-bottom: 20px; }
+    .movie-meta span { padding: 6px 10px; font-size: 0.75rem; }
+    .cta-button { padding: 10px 20px; font-size: 0.9rem; }
+
+    .carousel-btn { width: 35px; height: 35px; font-size: 1rem; }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+    .carousel-dots { bottom: 10px; }
+    .carousel-dots .dot { width: 8px; height: 8px; }
+
+    .section-title { font-size: 1.7rem; margin-bottom: 30px; }
+    .section-title::after { width: 50px; }
+
+    .films-track { animation-duration: 20s; gap: 15px; } 
+    .film-card-small { flex: 0 0 140px; } 
+    .film-card-small img { height: 200px; }
+    .film-card-small h4 { font-size: 0.8rem; margin-top: 8px; }
+    .film-overlay-small .overlay-title { font-size: 0.9rem; margin-bottom: 6px;}
+    .film-overlay-small .film-actions-small { gap: 6px; }
+    .film-overlay-small .button-small { font-size: 0.7rem; padding: 6px 8px; }
+
+    .film-tabs { flex-direction: column; gap: 8px; }
+    .tab-btn { padding: 10px; font-size: 0.85rem; }
+    .filters { gap: 10px; }
+    .search-box input, #locationFilter { font-size: 0.9rem; padding: 10px 35px 10px 12px; }
+
+    .films-grid { grid-template-columns: 1fr; gap: 15px; } 
+    .film-poster img { height: 280px; } 
+    .film-details h3 { font-size: 1.05rem; }
+    .film-actions .trailer-btn, .film-actions .ticket-btn { width: 100%; margin-bottom: 5px;} 
+    .film-actions { flex-direction: column; }
+
+}
+

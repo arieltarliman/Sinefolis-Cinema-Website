@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="icon" href="../../images/sitefooterlogo.png" type="image/png">
+    <link rel="stylesheet" href="../css/payment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <link rel="stylesheet" href="../component/navbar.css"/>
+  <div id="navbar-placeholder"></div>
+  
+    <main class="main-content">
+        <div class="container">
+            <div class="payment-wrapper">
+                <div class="left-section">
+                    <div class="movie-header">
+                        <h1 class="movie-title">SUPERMAN</h1>
+                        <div class="movie-info">
+                            <span class="showtime">Today, 7:30 PM</span>
+                            <span class="theater">Central Park Cinema</span>
+                        </div>
+                    </div>
+
+                    <div class="seat-selection">
+                        <h2 class="section-title">Select Your Seats</h2>
+                        <div class="theater-layout">
+                            <div class="screen">
+                                <div class="screen-label">SCREEN</div>
+                            </div>
+                            
+                            <div class="seating-area">
+                                <div class="seat-row">
+                                    <span class="row-label">A</span>
+                                    <div class="seats">
+                                        <button class="seat available" data-seat="A1" onclick="toggleSeat(this)">1</button>
+                                        <button class="seat available" data-seat="A2" onclick="toggleSeat(this)">2</button>
+                                        <button class="seat available" data-seat="A3" onclick="toggleSeat(this)">3</button>
+                                        <button class="seat available" data-seat="A4" onclick="toggleSeat(this)">4</button>
+                                        <button class="seat available" data-seat="A5" onclick="toggleSeat(this)">5</button>
+                                        <div class="aisle"></div>
+                                        <button class="seat available" data-seat="A6" onclick="toggleSeat(this)">6</button>
+                                        <button class="seat available" data-seat="A7" onclick="toggleSeat(this)">7</button>
+                                        <button class="seat available" data-seat="A8" onclick="toggleSeat(this)">8</button>
+                                        <button class="seat available" data-seat="A9" onclick="toggleSeat(this)">9</button>
+                                        <button class="seat available" data-seat="A10" onclick="toggleSeat(this)">10</button>
+                                    </div>
+                                </div>
+
+                                <div class="seat-row">
+                                    <span class="row-label">B</span>
+                                    <div class="seats">
+                                        <button class="seat available" data-seat="B1" onclick="toggleSeat(this)">1</button>
+                                        <button class="seat available" data-seat="B2" onclick="toggleSeat(this)">2</button>
+                                        <button class="seat available" data-seat="B3" onclick="toggleSeat(this)">3</button>
+                                        <button class="seat available" data-seat="B4" onclick="toggleSeat(this)">4</button>
+                                        <button class="seat available" data-seat="B5" onclick="toggleSeat(this)">5</button>
+                                        <div class="aisle"></div>
+                                        <button class="seat available" data-seat="B6" onclick="toggleSeat(this)">6</button>
+                                        <button class="seat available" data-seat="B7" onclick="toggleSeat(this)">7</button>
+                                        <button class="seat available" data-seat="B8" onclick="toggleSeat(this)">8</button>
+                                        <button class="seat available" data-seat="B9" onclick="toggleSeat(this)">9</button>
+                                        <button class="seat available" data-seat="B10" onclick="toggleSeat(this)">10</button>
+                                    </div>
+                                </div>
+
+                                <div class="seat-row">
+                                    <span class="row-label">C</span>
+                                    <div class="seats">
+                                        <button class="seat available" data-seat="C1" onclick="toggleSeat(this)">1</button>
+                                        <button class="seat available" data-seat="C2" onclick="toggleSeat(this)">2</button>
+                                        <button class="seat available" data-seat="C3" onclick="toggleSeat(this)">3</button>
+                                        <button class="seat available" data-seat="C4" onclick="toggleSeat(this)">4</button>
+                                        <button class="seat available" data-seat="C5" onclick="toggleSeat(this)">5</button>
+                                        <div class="aisle"></div>
+                                        <button class="seat available" data-seat="C6" onclick="toggleSeat(this)">6</button>
+                                        <button class="seat available" data-seat="C7" onclick="toggleSeat(this)">7</button>
+                                        <button class="seat available" data-seat="C8" onclick="toggleSeat(this)">8</button>
+                                        <button class="seat occupied" data-seat="C9" disabled>9</button>
+                                        <button class="seat occupied" data-seat="C10" disabled>10</button>
+                                    </div>
+                                </div>
+
+                                <div class="seat-row">
+                                    <span class="row-label">D</span>
+                                    <div class="seats">
+                                        <button class="seat available" data-seat="D1" onclick="toggleSeat(this)">1</button>
+                                        <button class="seat available" data-seat="D2" onclick="toggleSeat(this)">2</button>
+                                        <button class="seat available" data-seat="D3" onclick="toggleSeat(this)">3</button>
+                                        <button class="seat available" data-seat="D4" onclick="toggleSeat(this)">4</button>
+                                        <button class="seat available" data-seat="D5" onclick="toggleSeat(this)">5</button>
+                                        <div class="aisle"></div>
+                                        <button class="seat available" data-seat="D6" onclick="toggleSeat(this)">6</button>
+                                        <button class="seat available" data-seat="D7" onclick="toggleSeat(this)">7</button>
+                                        <button class="seat available" data-seat="D8" onclick="toggleSeat(this)">8</button>
+                                        <button class="seat available" data-seat="D9" onclick="toggleSeat(this)">9</button>
+                                        <button class="seat available" data-seat="D10" onclick="toggleSeat(this)">10</button>
+                                    </div>
+                                </div>
+
+                                <div class="seat-row">
+                                    <span class="row-label">E</span>
+                                    <div class="seats">
+                                        <button class="seat available" data-seat="E1" onclick="toggleSeat(this)">1</button>
+                                        <button class="seat available" data-seat="E2" onclick="toggleSeat(this)">2</button>
+                                        <button class="seat available" data-seat="E3" onclick="toggleSeat(this)">3</button>
+                                        <button class="seat available" data-seat="E4" onclick="toggleSeat(this)">4</button>
+                                        <button class="seat available" data-seat="E5" onclick="toggleSeat(this)">5</button>
+                                        <div class="aisle"></div>
+                                        <button class="seat available" data-seat="E6" onclick="toggleSeat(this)">6</button>
+                                        <button class="seat available" data-seat="E7" onclick="toggleSeat(this)">7</button>
+                                        <button class="seat available" data-seat="E8" onclick="toggleSeat(this)">8</button>
+                                        <button class="seat available" data-seat="E9" onclick="toggleSeat(this)">9</button>
+                                        <button class="seat available" data-seat="E10" onclick="toggleSeat(this)">10</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="seat-legend">
+                                <div class="legend-item">
+                                    <div class="legend-seat available"></div>
+                                    <span>Available</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-seat selected"></div>
+                                    <span>Selected</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-seat occupied"></div>
+                                    <span>Occupied</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="beverages-section">
+                        <h2 class="section-title">Beverages & Snacks</h2>
+                        <div class="beverages-grid">
+                            <div class="beverage-item">
+                                <img src="../../images/popcorn.png" alt="Popcorn">
+                                <div class="beverage-info">
+                                    <h3>Popcorn</h3>
+                                    <p class="price">$8.00</p>
+                                </div>
+                                <div class="quantity-control">
+                                    <button class="qty-btn minus" onclick="updateQuantity('popcorn', -1)">-</button>
+                                    <span class="quantity" id="popcorn-qty">0</span>
+                                    <button class="qty-btn plus" onclick="updateQuantity('popcorn', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="beverage-item">
+                                <img src="../../images/cola.png" alt="Cola">
+                                <div class="beverage-info">
+                                    <h3>Coca Cola</h3>
+                                    <p class="price">$4.50</p>
+                                </div>
+                                <div class="quantity-control">
+                                    <button class="qty-btn minus" onclick="updateQuantity('cola', -1)">-</button>
+                                    <span class="quantity" id="cola-qty">0</span>
+                                    <button class="qty-btn plus" onclick="updateQuantity('cola', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="beverage-item">
+                                <img src="../../images/hotdog.png" alt="Hot Dog">
+                                <div class="beverage-info">
+                                    <h3>Hot Dog</h3>
+                                    <p class="price">$6.00</p>
+                                </div>
+                                <div class="quantity-control">
+                                    <button class="qty-btn minus" onclick="updateQuantity('hotdog', -1)">-</button>
+                                    <span class="quantity" id="hotdog-qty">0</span>
+                                    <button class="qty-btn plus" onclick="updateQuantity('hotdog', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="beverage-item">
+                                <img src="../../images/fries.png" alt="French Fries">
+                                <div class="beverage-info">
+                                    <h3>French Fries</h3>
+                                    <p class="price">$5.50</p>
+                                </div>
+                                <div class="quantity-control">
+                                    <button class="qty-btn minus" onclick="updateQuantity('fries', -1)">-</button>
+                                    <span class="quantity" id="fries-qty">0</span>
+                                    <button class="qty-btn plus" onclick="updateQuantity('fries', 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-section">
+                    <div class="invoice-card">
+                        <div class="invoice-header">
+                            <h2>Order Summary</h2>
+                            <span class="invoice-number">#40292</span>
+                        </div>
+
+                        <div class="invoice-content">
+                            <div class="order-items">
+                                <div class="item-header">
+                                    <span>Item</span>
+                                    <span>Qty</span>
+                                    <span>Price</span>
+                                    <span>Total</span>
+                                </div>
+
+                                <div id="selected-seats" class="order-section">
+                                    </div>
+
+                                <div id="selected-beverages" class="order-section">
+                                    </div>
+                            </div>
+
+                            <div class="order-total">
+                                <div class="total-row">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotal">$0.00</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Tax (10%):</span>
+                                    <span id="tax">$0.00</span>
+                                </div>
+                                <div class="total-row final-total">
+                                    <span>Total:</span>
+                                    <span id="total">$0.00</span>
+                                </div>
+                            </div>
+
+                            <div class="payment-methods">
+                                <h3>Payment Method</h3>
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="visa" checked>
+                                        <div class="payment-card">
+                                            <img src="../../images/visa.png" alt="Visa">
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="dana">
+                                        <div class="payment-card">
+                                            <img src="../../images/dana.png" alt="Dana">
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="paypal">
+                                        <div class="payment-card">
+                                            <img src="../../images/paypal.png" alt="PayPal">
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="mastercard">
+                                        <div class="payment-card">
+                                            <img src="../../images/mastercard.png" alt="mastercard">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="finish-btn" onclick="finishTransaction()">
+                                Complete Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <link rel="stylesheet" href="../component/footer.css"/>
+    <div id="footer-placeholder"></div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Payment Successful!</h2>
+            <p>Your tickets have been booked successfully.</p>
+            <p>Order #<span id="orderNumber">40292</span></p>
+            <button class="modal-btn" onclick="goToHome()">Go to Home</button>
+        </div>
+    </div>
+
+    <script src="../js/payment.js"></script>
+</body>
+</html>
